@@ -30,7 +30,7 @@ def gmm_scores(X_train, X_val, k, covariance_type='full', reg_covar=1e-06, rando
     clf.fit(X_train)
     return clf.score(X_val)
 
-def get_gmm(X, y, y_cat=False, max_comp=20, val_size=0.33, reg_covar=1e-06, random_state=42):
+def get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42):
     
     '''
     This function trains a GMM and evaluate it in a holdout set using the mean log_likelihood of samples
@@ -59,7 +59,7 @@ def get_gmm(X, y, y_cat=False, max_comp=20, val_size=0.33, reg_covar=1e-06, rand
         for c in classes:
             #Selecting number of components
             X_gmm_train, X_gmm_val, _, _=train_test_split(X[y==c], X[y==c], test_size=val_size, random_state=random_state)
-            scores=np.array([gmm_scores(X_gmm_train, X_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar,  random_state=random_state) for k in list(range(1, max_comp, 1))])
+            scores=np.array([gmm_scores(X_gmm_train, X_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar,  random_state=random_state) for k in nums_comp])
             k_star=np.argmax(scores)+1
 
             #Training GMMs
@@ -74,7 +74,7 @@ def get_gmm(X, y, y_cat=False, max_comp=20, val_size=0.33, reg_covar=1e-06, rand
         X_gmm_train, X_gmm_val, y_gmm_train, y_gmm_val = train_test_split(X, y, test_size=val_size, random_state=random_state)
         Z_gmm_train=np.hstack((y_gmm_train.reshape((-1,1)), X_gmm_train))
         Z_gmm_val=np.hstack((y_gmm_val.reshape((-1,1)), X_gmm_val))
-        scores=np.array([gmm_scores(Z_gmm_train, Z_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar, random_state=random_state) for k in list(range(1, max_comp, 1))])
+        scores=np.array([gmm_scores(Z_gmm_train, Z_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar, random_state=random_state) for k in nums_comp])
         k_star=np.argmax(scores)+1
         
         #Training GMM
