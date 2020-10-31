@@ -45,8 +45,12 @@ This class is used to order features/varibles according to their importance and 
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
     - **gmm**: 
-        - a GMM Scikit-Learn fitted model if we consider the target variable to be *non*-categorical *or*
-    - **selection_mode**: forward/backward algorithms.
+        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted model;
+        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted model for each category. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
+        - PS: the GMMs must be `covariance_type='full'` at the current *InfoSel* version.
+    - **selection_mode**: `forward`/`backward` algorithms.
+        - `forward` selection: we start with an empty set of features and then select the feature that has the largest estimated mutual information with the target variable and. At each subsequent step, we select the feature that marginally maximizes the estimated mutual information of the target and all the chosen features so far. We stop when we have selected/ordered all the features;
+        - `backward` elimination: we start with the full set of features and then at each step, we eliminate the feature that marginally maximizes the estimated mutual information of the target and all the remaining features. We stop when we have no more features to eliminate;
 
 2. `fit(self, X, y, verbose=True, eps=0)`
     - **X**: numpy array of features; 
@@ -54,6 +58,18 @@ This class is used to order features/varibles according to their importance and 
     - **verbose**: print or not to print!?
     - **eps**: small value so we can avoid taking log of zero in some cases .
 
+3. `get_info(self)`: 
+    - This function creates and outputs a Pandas DataFrame with the history of feature selection/elimination. The `delta` column gives us the percentual information loss/gain in that round, relatively to the latter;
+    
+4. `plot_delta(self)`: 
+    - This function plots the history of percentual changes in the mutual information.
+    
+5. `def plot_mi(self)`: 
+    - This function plots the history of the mutual information.
+    
+6. `transform(self, X, rd)`: 
+    - This function takes **X** and transforms it in **X_new**, maintaining the features of Round `rd`; 
+    
 ### 3.2\. Auxiliary Function `get_gmm()`
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
