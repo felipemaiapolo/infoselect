@@ -39,7 +39,7 @@ We generate a dataset <img src="https://render.githubusercontent.com/render/math
 <img src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Balign*%7D%0AY_i%20%26%3D%20f(X_%7B0%2Ci%7D%2C...%2CX_%7B6%2Ci%7D)%20%2B%20%5Cepsilon_i%5C%5C%0A%20%20%20%20%26%3D10%5Ccdot%20%5Csin(%5Cpi%20X_%7B0%2Ci%7D%20%20X_%7B1%2Ci%7D)%20%2B%2020%20(X_%7B2%2Ci%7D-0.5)%5E2%20%2B%2010%20X_%7B3%2Ci%7D%20%2B%205%20X_%7B4%2Ci%7D%20%2B%20%5Cepsilon_i%0A%5Cend%7Balign*%7D">
 <br>
 
-Where <img src="https://render.githubusercontent.com/render/math?math=X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]"> and <img src="https://render.githubusercontent.com/render/math?math=\epsilon_i \sim N(0,1)"> independent from all the other random variables for all $i\in [n]$. See that our target variable does not depende on the last two features. In the following we set $n=10000$:
+Where <img src="https://render.githubusercontent.com/render/math?math=X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]"> and <img src="https://render.githubusercontent.com/render/math?math=\epsilon_i \sim N(0,1)"> independent from all the other random variables for all <img src="https://render.githubusercontent.com/render/math?math=i\in [n]">. See that our target variable does not depende on the last two features. In the following we set `n=10000`:
 
 
 ```python
