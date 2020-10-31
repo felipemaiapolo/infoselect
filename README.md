@@ -14,7 +14,7 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
 If you use our package in your research, you can cite it as follows:
 
     @misc{polo2020infosel,
-        author={Polo, Felipe Maia and Vicente, Renato},
+        author={Polo, Felipe Maia and Da Silva, Felipe Leno},
         title = {InfoSel - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information},
         year = {2020},
         publisher = {GitHub},
