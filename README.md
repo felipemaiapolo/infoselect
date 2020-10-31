@@ -36,7 +36,7 @@ import matplotlib.pyplot as plt
 We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
 
 <br>
-<img src="https://render.githubusercontent.com/render/math?math=Y_i=10 \text{sin}(\pi X_{0,i}  X_{1,i}) + 20 (X_{2,i} - 0.5 )^2 + 10 X_{3,i} + 5 X_{4,i} + \epsilon_i">
+<img src="https://render.githubusercontent.com/render/math?math=Y_i=10 \text{sin}(\pi X_{0,i}  X_{1,i}) %2B 20 (X_{2,i} - 0.5 )^2 %2B 10 X_{3,i} %2B 5 X_{4,i} %2B \epsilon_i">
 <br>
 
 Where <img src="https://render.githubusercontent.com/render/math?math=X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]"> and <img src="https://render.githubusercontent.com/render/math?math=\epsilon_i \sim N(0,1)"> independent from all the other random variables for all $i\in [n]$. See that our target variable does not depende on the last two features. In the following we set $n=10000$:
