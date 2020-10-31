@@ -2,7 +2,7 @@
 # *InfoSel*: A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information.
 
 
-------------------------------------------
+
 
 ### *Felipe Maia Polo (felipemaiapolo), Felipe Leno da Silva (f-leno)*
 
@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 
 ### 1.1\. Dataset
 
-We generate a dataset $D$ sampled from $\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}$ similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
+We generate a dataset $D$ sampled from ![equation](https://bit.ly/3oJUAJV) similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
 
 <br>
 \begin{align}
@@ -112,18 +112,6 @@ select.get_info()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -319,18 +307,6 @@ select.get_info()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
