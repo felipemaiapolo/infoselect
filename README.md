@@ -44,7 +44,8 @@ $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 This class is used to order features/varibles according to their importance and making the selection itself. Next we detail its methods:
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
-    - **gmm**: model or dict. of GMM(s);
+    - **gmm**: 
+        - a GMM Scikit-Learn fitted model if we consider the target variable to be *non*-categorical *or*
     - **selection_mode**: forward/backward algorithms.
 
 2. `fit(self, X, y, verbose=True, eps=0)`
