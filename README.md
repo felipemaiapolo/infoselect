@@ -73,7 +73,7 @@ This class is used to order features/variables according to their importance and
     - **eps**: small value so we can avoid taking log of zero in some cases .
 
 3. `get_info(self)`: 
-    - This function creates and outputs a Pandas DataFrame with the history of feature selection/elimination. The `delta` column gives us the percentual information loss/gain in that round, relatively to the latter;
+    - This function creates and outputs a Pandas DataFrame with the history of feature selection/elimination. The `mi_mean` column gives the estimated Mutual Information while `mi_error` gives the standard error of that estimate. On the other hand, the `delta` column gives us the percentual information loss/gain in that round, relatively to the latter;
     
 4. `plot_delta(self)`: 
     - This function plots the history of percentual changes in the mutual information.
