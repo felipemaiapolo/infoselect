@@ -6,6 +6,8 @@
 
 ### *Felipe Maia Polo (felipemaiapolo), Felipe Leno da Silva (f-leno)*
 
+In case you have any question or suggestion, please get in touch sending us an e-mail in *felipemaiapolo@gmail.com*.
+
 --------------
 
 ## 1\. Introduction 
@@ -64,27 +66,22 @@ This class is used to order features/varibles according to their importance and 
 4. `plot_delta(self)`: 
     - This function plots the history of percentual changes in the mutual information.
     
-5. `def plot_mi(self)`: 
+5. `plot_mi(self)`: 
     - This function plots the history of the mutual information.
     
 6. `transform(self, X, rd)`: 
     - This function takes **X** and transforms it in **X_new**, maintaining the features of Round `rd`; 
     
-### 3.2\. Auxiliary Function `get_gmm()`
+### 3.2\. Auxiliary Function `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`
 
-1. `__init__(self, gmm, selection_mode = 'forward')`
-    - **gmm**: model or dict. of GMM(s);
-    - **selection_mode**: forward/backward algorithms.
+Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. Finally, it returns a trained Scikit-Learn GMM (or a dictionary of them in the case which Y is categorical) in the whole set `(X,y)`.
 
-2. `fit(self, X, y, verbose=True, eps=0)`
-    - **X**: numpy array of features; 
-    - **y**: numpy array of labels;
-    - **verbose**: print or not to print!?
-    - **eps**: small value so we can avoid taking log of zero in some cases .
-
-
-`
-
+- **X**: numpy array of features; 
+- **y**: numpy array of labels;
+- **y_cat**: if we should consider Y as categorical;
+- **num_comps**: numbers of GMM components to be validated;
+- **val_size**: size of holdout set used to validate the GMMs numbers of components;
+- **random_state**: seed.
 
 --------------------
 
