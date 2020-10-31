@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 
 ### 1.1\. Dataset
 
-We generate a dataset $D$ sampled from ![equation](https://bit.ly/3oJUAJV) similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
+We generate a dataset $D$ sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
 
 <br>
 \begin{align}
