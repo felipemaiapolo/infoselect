@@ -74,14 +74,16 @@ This class is used to order features/varibles according to their importance and 
     
 ### 3.2\. Auxiliary Function `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`
 
-Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. Finally, it returns a trained Scikit-Learn GMM (or a dictionary of them in the case which Y is categorical) in the whole set `(X,y)`.
+1. get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42): 
 
-- **X**: numpy array of features; 
-- **y**: numpy array of labels;
-- **y_cat**: if we should consider Y as categorical;
-- **num_comps**: numbers of GMM components to be validated;
-- **val_size**: size of holdout set used to validate the GMMs numbers of components;
-- **random_state**: seed.
+    - Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. Finally, it returns a trained Scikit-Learn GMM (or a dictionary of them in the case which Y is categorical) in the whole set `(X,y)`.
+
+        - **X**: numpy array of features; 
+        - **y**: numpy array of labels;
+        - **y_cat**: if we should consider Y as categorical;
+        - **num_comps**: numbers of GMM components to be validated;
+        - **val_size**: size of holdout set used to validate the GMMs numbers of components;
+        - **random_state**: seed.
 
 --------------------
 
