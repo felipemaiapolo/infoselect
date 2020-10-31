@@ -41,7 +41,7 @@ class SelectVars:
         self.selection_mode = selection_mode
         self.gmm=gmm
     
-    def fit(self, X, y, verbose=True, eps=10**-50):
+    def fit(self, X, y, verbose=True, eps=0):
         
         '''
         This function order the features according to their importance - from 
