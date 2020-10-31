@@ -38,8 +38,7 @@ def get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_cova
     Inputs: - X: numpy array of features; 
             - y: numpy array of labels;
             - y_cat: if we should consider y as categorical;
-            - covariance_type: covariance type (scikit-learn implementation);
-            - max_comp: maximum number of GMM components to be tested;
+            - num_comps: numbers of GMM components to be tested;
             - val_size: size of holdout set used to validate the GMMs numbers of components
             - random_state: seed.
     
