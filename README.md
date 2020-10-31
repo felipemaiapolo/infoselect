@@ -55,7 +55,7 @@ $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 <a name="3.1"></a>
 ### 3.1\. Main Class `SelectVars`
 
-This class is used to order features/varibles according to their importance and making the selection itself. Next we detail its methods:
+This class is used to order features/variables according to their importance and making the selection itself. Next we detail its methods:
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
     - **gmm**: 
@@ -96,6 +96,7 @@ This class is used to order features/varibles according to their importance and 
         - **y_cat**: if we should consider Y as categorical;
         - **num_comps**: numbers of GMM components to be validated;
         - **val_size**: size of holdout set used to validate the GMMs numbers of components;
+        - **reg_covar**: non-negative regularization added to the diagonal of covariance. Ensures the covariance matrices are non-singular.
         - **random_state**: seed.
 
 --------------------
@@ -349,7 +350,7 @@ Training (and validating) GMMs:
 ```python
 %%time 
 
-gmm=inf.get_gmm(X, y, y_cat=True, max_comp=10)
+gmm=inf.get_gmm(X, y, y_cat=True)
 ```
 
     Wall time: 6.7 s
