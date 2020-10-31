@@ -26,12 +26,10 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
 If you use our package in your research, you can cite it as follows:
 
     @misc{polo2020infosel,
-        author={Polo, Felipe Maia and Da Silva, Felipe Leno},
-        title = {InfoSel - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information},
-        year = {2020},
-        publisher = {GitHub},
-        journal = {GitHub repository},
-        howpublished = {\url{https://github.com/felipemaiapolo/infosel}},
+      title={InfoSel - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information},
+      author={Polo, Felipe Maia and Da Silva, Felipe Leno},
+      journal={GitHub: github.com/felipemaiapolo/infosel},
+      year={2020}
     }
 
 
@@ -59,8 +57,8 @@ This class is used to order features/variables according to their importance and
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
     - **gmm**: 
-        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted model;
-        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted model for each category. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
+        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) model;
+        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
         - PS: the GMMs must be `covariance_type='full'` at the current *InfoSel* version.
     - **selection_mode**: `forward`/`backward` algorithms.
         - `forward` selection: we start with an empty set of features and then select the feature that has the largest estimated mutual information with the target variable and. At each subsequent step, we select the feature that marginally maximizes the estimated mutual information of the target and all the chosen features so far. We stop when we have selected/ordered all the features;
