@@ -1,25 +1,41 @@
 
-# ***InfoSel***: A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information.
+# ***InfoSel*** - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information
 
 
 
 
 ### *Felipe Maia Polo (felipemaiapolo), Felipe Leno da Silva (f-leno)*
 
+
+## 1\. Introduction 
+
+In this package we implement the ideas proposed by [1, 2] in order to make variable/feature selection prior to regression and classification tasks using Gaussian Mixture Models (GMMs) to estimate the Mutual Information between labels and features. This is an efficient and well-performing alternative and was used in a recent work [3] by one of us.
+
+If you use our package in your research, you can cite it as follows:
+
+    @misc{polo2020infosel,
+        author={Polo, Felipe Maia and Vicente, Renato},
+        title = {InfoSel - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information},
+        year = {2020},
+        publisher = {GitHub},
+        journal = {GitHub repository},
+        howpublished = {\url{https://github.com/felipemaiapolo/infosel}},
+    }
+
+
 --------------
 
-## 0\. Installing *InfoSel* 
+## 2\. Installing *InfoSel* 
 
-From Github:
+You can install the package from
+[GitHub](https://github.com/hoxo-m/densratio_py).
 
-
-```python
-!pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
+``` :sh
+$ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 ```
-
 --------------------
 
-## 1\. Example of *InfoSel* use
+## 3\. Example of *InfoSel* use
 
 Loading Packages:
 
@@ -31,7 +47,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-### 1.1\. Dataset
+### 3.1\. Dataset
 
 We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
 
@@ -65,7 +81,7 @@ X.shape, y.shape
 
 
 
-### 1.2\. Selecting Features for a Regression Task
+### 3.2\. Selecting Features for a Regression Task
 
 Training (and validating) GMM:
 
@@ -109,7 +125,6 @@ select.get_info()
 
 
 <div>
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -232,7 +247,7 @@ X_new.shape
 
 
 
-### 1.3\. Selecting Features for a Classification Task
+### 3.3\. Selecting Features for a Classification Task
 
 Categorizing $Y$:
 
@@ -304,7 +319,6 @@ select.get_info()
 
 
 <div>
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -433,5 +447,14 @@ X_new.shape
 
 
     (10000, 5)
+    
+--------------
+## 4\. Reference
+
+[1] Eirola, E., Lendasse, A., & Karhunen, J. (2014, July). Variable selection for regression problems using Gaussian mixture models to estimate mutual information. In 2014 International Joint Conference on Neural Networks (IJCNN) (pp. 1606-1613). IEEE.
+
+[2] Lan, T., Erdogmus, D., Ozertem, U., & Huang, Y. (2006, July). Estimating mutual information using gaussian mixture model for feature ranking and selection. In The 2006 IEEE International Joint Conference on Neural Network Proceedings (pp. 5034-5039). IEEE.
+
+[3] Polo, F. M., & Vicente, R. (2020). Covariate Shift Adaptation in High-Dimensional and Divergent Distributions. arXiv preprint arXiv:2010.01184.
 
 
