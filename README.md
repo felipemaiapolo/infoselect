@@ -6,6 +6,7 @@
 
 ### *Felipe Maia Polo (felipemaiapolo), Felipe Leno da Silva (f-leno)*
 
+--------------
 
 ## 1\. Introduction 
 
@@ -33,9 +34,44 @@ You can install the package from
 ``` :sh
 $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 ```
+
 --------------------
 
-## 3\. Example of *InfoSel* use
+## 3\. Main functionalities of *InfoSel* 
+
+### 3.1\. Main Class `SelectVars`
+
+This class is used to order features/varibles according to their importance and making the selection itself. Next we detail its methods:
+
+1. `__init__(self, gmm, selection_mode = 'forward')`
+    - **gmm**: model or dict. of GMM(s);
+    - **selection_mode**: forward/backward algorithms.
+
+2. `fit(self, X, y, verbose=True, eps=0)`
+    - **X**: numpy array of features; 
+    - **y**: numpy array of labels;
+    - **verbose**: print or not to print!?
+    - **eps**: small value so we can avoid taking log of zero in some cases .
+
+### 3.2\. Auxiliary Function `get_gmm()`
+
+1. `__init__(self, gmm, selection_mode = 'forward')`
+    - **gmm**: model or dict. of GMM(s);
+    - **selection_mode**: forward/backward algorithms.
+
+2. `fit(self, X, y, verbose=True, eps=0)`
+    - **X**: numpy array of features; 
+    - **y**: numpy array of labels;
+    - **verbose**: print or not to print!?
+    - **eps**: small value so we can avoid taking log of zero in some cases .
+
+
+`
+
+
+--------------------
+
+## 4\. Example of *InfoSel* use
 
 Loading Packages:
 
@@ -47,7 +83,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-### 3.1\. Dataset
+### 4.1\. Dataset
 
 We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
 
@@ -81,7 +117,7 @@ X.shape, y.shape
 
 
 
-### 3.2\. Selecting Features for a Regression Task
+### 4.2\. Selecting Features for a Regression Task
 
 Training (and validating) GMM:
 
@@ -89,7 +125,7 @@ Training (and validating) GMM:
 ```python
 %%time
 
-gmm = inf.get_gmm(X, y, max_comp=10)
+gmm = inf.get_gmm(X, y)
 ```
 
     Wall time: 8.43 s
@@ -207,7 +243,7 @@ select.get_info()
 
 
 
-It is possible to see that the estimated mutual information is untouched until Round 2, when it varies around -$30\%$.
+It is possible to see that the estimated mutual information is untouched until Round 2, when it varies around -30%.
 
 Since there is a 'break' in Round 2, we should choose to stop the algorithm at theta round. This will be clear in the Mutual Information history plot that follows:
 
@@ -247,9 +283,9 @@ X_new.shape
 
 
 
-### 3.3\. Selecting Features for a Classification Task
+### 4.3\. Selecting Features for a Classification Task
 
-Categorizing $Y$:
+Categorizing <img src="https://render.githubusercontent.com/render/math?math=Y">:
 
 
 ```python
@@ -449,7 +485,7 @@ X_new.shape
     (10000, 5)
     
 --------------
-## 4\. Reference
+## 5\. References
 
 [1] Eirola, E., Lendasse, A., & Karhunen, J. (2014, July). Variable selection for regression problems using Gaussian mixture models to estimate mutual information. In 2014 International Joint Conference on Neural Networks (IJCNN) (pp. 1606-1613). IEEE.
 
