@@ -28,7 +28,7 @@ If you use our package in your research, you can cite it as follows:
 ## 2\. Installing *InfoSel* 
 
 You can install the package from
-[GitHub](https://github.com/hoxo-m/densratio_py).
+[GitHub](https://github.com/felipemaiapolo/infosel).
 
 ``` :sh
 $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
