@@ -1,5 +1,5 @@
 
-# *InfoSel*: A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information.
+# ***InfoSel***: A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information.
 
 
 
@@ -33,16 +33,13 @@ import matplotlib.pyplot as plt
 
 ### 1.1\. Dataset
 
-We generate a dataset $D$ sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
+We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
 
 <br>
-\begin{align}
-Y_i &= f(X_{0,i},...,X_{6,i}) + \epsilon_i \\[.5em]
-&=10\cdot \sin(\pi X_{0,i}  X_{1,i}) + 20 (X_{2,i}-0.5)^2 + 10 X_{3,i} + 5 X_{4,i} + \epsilon_i
-\end{align}
+<img src="https://render.githubusercontent.com/render/math?math=Y_i=10\cdot \sin(\pi X_{0,i}  X_{1,i}) + 20 (X_{2,i}-0.5)^2 + 10 X_{3,i} + 5 X_{4,i} + \epsilon_i">
 <br>
 
-Where $X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]$ and $\epsilon_i \sim N(0,1)$ independent from all the other random variables for all $i\in [n]$. In the following we set $n=10000$:
+Where <img src="https://render.githubusercontent.com/render/math?math=X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]"> and <img src="https://render.githubusercontent.com/render/math?math=\epsilon_i \sim N(0,1)"> independent from all the other random variables for all $i\in [n]$. See that our target variable does not depende on the last two features. In the following we set $n=10000$:
 
 
 ```python
