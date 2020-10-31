@@ -12,7 +12,7 @@ def check_array(X, name="X", dim=2):
     if not (type(X)==np.ndarray) or len(X.shape)!=dim:
             raise ValueError(name+" should be a {:}-dimensional Numpy array.".format(dim))
             
-def gmm_scores(X_train, X_val, k, covariance_type='full', reg_covar=1e-06, random_state=42):
+def gmm_scores(X_train, X_val, k, reg_covar=1e-06, random_state=42):
     
     '''
     This function trains a GMM and evaluate it in a holdout set using the mean log_likelihood of samples
@@ -25,7 +25,7 @@ def gmm_scores(X_train, X_val, k, covariance_type='full', reg_covar=1e-06, rando
     
     Output: - log_likelihood in the holdout set
     '''
-    
+    covariance_type='full'
     clf = mixture.GaussianMixture(n_components=k, covariance_type=covariance_type, reg_covar=reg_covar, random_state=random_state)
     clf.fit(X_train)
     return clf.score(X_val)
