@@ -56,10 +56,9 @@ import matplotlib.pyplot as plt
 
 We generate a dataset $D$ sampled from $\mathcal{D}=\{(X_{0,i},...,X_{14,i},Y_i)\}_{i=1}^{n}$ similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
 
-\begin{align}
-Y_i &= f(X_{0,i},...,X_{14,i}) + \epsilon_i \\[.5em]
-&=10\cdot \sin(\pi X_{0,i}  X_{1,i}) + 20 (X_{2,i}-0.5)^2 + 10 X_{3,i} + 5 X_{4,i} + \epsilon_i
-\end{align}
+\begin{equation}
+Y_i =10\cdot \sin(\pi X_{0,i}  X_{1,i}) + 20 (X_{2,i}-0.5)^2 + 10 X_{3,i} + 5 X_{4,i} + \epsilon_i
+\end{equation}
 
 Where $X_{0,i},...,X_{14,i} \overset{iid}{\sim} U[0,1]$ and $\epsilon_i \sim N(0,1)$ independent from all the other random variables for all $i\in [n]$. In the following we set $n=10000$:
 
