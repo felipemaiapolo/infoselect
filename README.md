@@ -9,7 +9,16 @@
 In case you have any question or suggestion, please get in touch sending us an e-mail in *felipemaiapolo@gmail.com*.
 
 --------------
+## Contents
+1. [ Introduction ](#1)
+2. [ Installing *InfoSel*  ](#2)
+3. [ Main functionalities of *InfoSel* ](#3)
+4. [ Examples of *InfoSel* use ](#4)
+5. [ References ](#5)
 
+--------------
+
+<a name="1"></a>
 ## 1\. Introduction 
 
 In this package we implement the ideas proposed by [1, 2] in order to make variable/feature selection prior to regression and classification tasks using Gaussian Mixture Models (GMMs) to estimate the Mutual Information between labels and features. This is an efficient and well-performing alternative and was used in a recent work [3] by one of us.
@@ -28,6 +37,7 @@ If you use our package in your research, you can cite it as follows:
 
 --------------
 
+<a name="2"></a>
 ## 2\. Installing *InfoSel* 
 
 You can install the package from
@@ -39,8 +49,10 @@ $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 
 --------------------
 
+<a name="3"></a>
 ## 3\. Main functionalities of *InfoSel* 
 
+<a name="3.1"></a>
 ### 3.1\. Main Class `SelectVars`
 
 This class is used to order features/varibles according to their importance and making the selection itself. Next we detail its methods:
@@ -71,10 +83,11 @@ This class is used to order features/varibles according to their importance and 
     
 6. `transform(self, X, rd)`: 
     - This function takes **X** and transforms it in **X_new**, maintaining the features of Round `rd`; 
-    
-### 3.2\. Auxiliary Function `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`
+ 
+<a name="3.2"></a>
+### 3.2\. Auxiliary Function `get_gmm`
 
-1. get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42): 
+1. `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`: 
 
     - Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. Finally, it returns a trained Scikit-Learn GMM (or a dictionary of them in the case which Y is categorical) in the whole set `(X,y)`.
 
@@ -87,7 +100,8 @@ This class is used to order features/varibles according to their importance and 
 
 --------------------
 
-## 4\. Example of *InfoSel* use
+<a name="4"></a>
+## 4\. Examples of *InfoSel* use
 
 Loading Packages:
 
@@ -99,6 +113,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
+<a name="4.1"></a>
 ### 4.1\. Dataset
 
 We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
@@ -132,7 +147,7 @@ X.shape, y.shape
     ((10000, 7), (10000,))
 
 
-
+<a name="4.2"></a>
 ### 4.2\. Selecting Features for a Regression Task
 
 Training (and validating) GMM:
@@ -298,7 +313,7 @@ X_new.shape
     (10000, 5)
 
 
-
+<a name="4.3"></a>
 ### 4.3\. Selecting Features for a Classification Task
 
 Categorizing <img src="https://render.githubusercontent.com/render/math?math=Y">:
@@ -501,6 +516,8 @@ X_new.shape
     (10000, 5)
     
 --------------
+
+<a name="5"></a>
 ## 5\. References
 
 [1] Eirola, E., Lendasse, A., & Karhunen, J. (2014, July). Variable selection for regression problems using Gaussian mixture models to estimate mutual information. In 2014 International Joint Conference on Neural Networks (IJCNN) (pp. 1606-1613). IEEE.
