@@ -59,7 +59,7 @@ def get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_cova
             #Selecting number of components
             X_gmm_train, X_gmm_val, _, _=train_test_split(X[y==c], X[y==c], test_size=val_size, random_state=random_state)
             scores=np.array([gmm_scores(X_gmm_train, X_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar,  random_state=random_state) for k in num_comps])
-            k_star=np.argmax(scores)+1
+            k_star=num_comps[np.argmax(scores)]
 
             #Training GMMs
             gmm[c] = mixture.GaussianMixture(n_components=k_star, covariance_type=covariance_type, reg_covar=reg_covar, random_state=random_state)
@@ -74,7 +74,7 @@ def get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_cova
         Z_gmm_train=np.hstack((y_gmm_train.reshape((-1,1)), X_gmm_train))
         Z_gmm_val=np.hstack((y_gmm_val.reshape((-1,1)), X_gmm_val))
         scores=np.array([gmm_scores(Z_gmm_train, Z_gmm_val, k, covariance_type=covariance_type, reg_covar=reg_covar, random_state=random_state) for k in num_comps])
-        k_star=np.argmax(scores)+1
+        k_star=num_comps[np.argmax(scores)]
         
         #Training GMM
         Z = np.hstack((y.reshape((-1,1)),X))
