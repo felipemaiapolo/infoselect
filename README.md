@@ -57,7 +57,7 @@ This class is used to order features/variables according to their importance and
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
     - **gmm**: 
-        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) model;
+        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) - y should always be in the first column;
         - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
         - PS: the GMMs must be `covariance_type='full'` at the current *InfoSel* version.
     - **selection_mode**: `forward`/`backward` algorithms.
@@ -87,7 +87,7 @@ This class is used to order features/variables according to their importance and
 
 1. `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`: 
 
-    - Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. Finally, it returns a trained Scikit-Learn GMM (or a dictionary of them in the case which Y is categorical) in the whole set `(X,y)`.
+    - Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. If Y is non-categorical, it returns a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) model (in this order). On the other hand, if Y is categorical it returns a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`.
 
         - **X**: numpy array of features; 
         - **y**: numpy array of labels;
@@ -354,7 +354,7 @@ gmm=inf.get_gmm(X, y, y_cat=True)
     Wall time: 6.7 s
     
 
-Ordering features by their importances using the *Backward Elimination* algorithm:
+Ordering features by their importances using the *Forward Selection* algorithm:
 
 
 ```python
