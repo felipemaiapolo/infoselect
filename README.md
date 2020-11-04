@@ -1,5 +1,5 @@
 
-# ***InfoSel*** - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information
+# ***iSelection*** - Mutual Information Based Feature Selection in Python
 
 
 
@@ -25,10 +25,10 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
 
 If you use our package in your research, you can cite it as follows:
 
-    @misc{polo2020infosel,
-      title={InfoSel - A Python package that makes feature/variable selection for supervised learning tasks using Mutual Information},
+    @misc{polo2020iselection,
+      title={iSelection - Mutual Information Based Feature Selection in Python},
       author={Polo, Felipe Maia and Da Silva, Felipe Leno},
-      journal={GitHub: github.com/felipemaiapolo/infosel},
+      journal={GitHub: github.com/felipemaiapolo/iselection},
       year={2020}
     }
 
@@ -48,7 +48,7 @@ $ pip install git+https://github.com/felipemaiapolo/infosel.git#egg=infosel
 --------------------
 
 <a name="3"></a>
-## 3\. Main functionalities of *InfoSel* 
+## 3\. Main functionalities of *iSelection* 
 
 <a name="3.1"></a>
 ### 3.1\. Main Class `SelectVars`
@@ -59,7 +59,7 @@ This class is used to order features/variables according to their importance and
     - **gmm**: 
         - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) - y should always be in the first column;
         - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
-        - PS: the GMMs must be `covariance_type='full'` at the current *InfoSel* version.
+        - PS: the GMMs must be `covariance_type='full'` at the current *iSelection* version.
     - **selection_mode**: `forward`/`backward` algorithms.
         - `forward` selection: we start with an empty set of features and then select the feature that has the largest estimated mutual information with the target variable and. At each subsequent step, we select the feature that marginally maximizes the estimated mutual information of the target and all the chosen features so far. We stop when we have selected/ordered all the features;
         - `backward` elimination: we start with the full set of features and then at each step, we eliminate the feature that marginally maximizes the estimated mutual information of the target and all the remaining features. We stop when we have no more features to eliminate;
@@ -100,13 +100,13 @@ This class is used to order features/variables according to their importance and
 --------------------
 
 <a name="4"></a>
-## 4\. Examples of *InfoSel* use
+## 4\. Examples of *iSelection* use
 
 Loading Packages:
 
 
 ```python
-import infosel as inf
+import iselection as is
 import numpy as np  
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -155,7 +155,7 @@ Training (and validating) GMM:
 ```python
 %%time
 
-gmm = inf.get_gmm(X, y)
+gmm = is.get_gmm(X, y)
 ```
 
     Wall time: 8.43 s
@@ -165,7 +165,7 @@ Ordering features by their importances using the *Backward Elimination* algorith
 
 
 ```python
-select = inf.SelectVars(gmm, selection_mode = 'backward')
+select = is.SelectVars(gmm, selection_mode = 'backward')
 select.fit(X, y, verbose=True)    
 ```
 
@@ -348,7 +348,7 @@ Training (and validating) GMMs:
 ```python
 %%time 
 
-gmm=inf.get_gmm(X, y, y_cat=True)
+gmm=is.get_gmm(X, y, y_cat=True)
 ```
 
     Wall time: 6.7 s
@@ -358,7 +358,7 @@ Ordering features by their importances using the *Forward Selection* algorithm:
 
 
 ```python
-select=inf.SelectVars(gmm, selection_mode='forward')
+select=is.SelectVars(gmm, selection_mode='forward')
 select.fit(X, y, verbose=True)    
 ```
 
