@@ -5,11 +5,11 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="infosel",
+    name="infoselect",
     version="1.0.0",
     author="Felipe Maia Polo & Felipe Leno da Silva",
     author_email="felipemaiapolo@gmail.com, f.leno@usp.br",
-    description="A package that makes feature/variable selection for supervised learning using Mutual Information.",
+    description="Mutual Information Based Feature Selection in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="",
