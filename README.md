@@ -13,7 +13,7 @@ In case you have any question or suggestion, please get in touch sending us an e
 1. [ Introduction ](#1)
 2. [ Installing *InfoSelect*  ](#2)
 3. [ Main functionalities of *InfoSelect* ](#3)
-4. [ Examples of *InfoSel* use ](#4)
+4. [ Examples of *InfoSelect* use ](#4)
 5. [ References ](#5)
 
 --------------
