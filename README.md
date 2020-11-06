@@ -282,10 +282,7 @@ Since there is a 'break' in Round 2, we should choose to stop the algorithm at t
 select.plot_mi()
 ```
 
-
-
-
-![png](https://ibb.co/qxVPZ1t)
+<img src="https://ibb.co/qxVPZ1t">
 
 
 Plotting the percentual variations of the mutual information between rounds:
