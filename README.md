@@ -6,6 +6,9 @@
 
 ### *Felipe Maia Polo (felipemaiapolo), Felipe Leno da Silva (f-leno)*
 
+[![PyPI](https://img.shields.io/pypi/v/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
+[![PyPI](https://img.shields.io/pypi/dm/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
+
 In case you have any question or suggestion, please get in touch sending us an e-mail in *felipemaiapolo@gmail.com*.
 
 --------------
@@ -39,10 +42,17 @@ If you use our package in your research, you can cite it as follows:
 ## 2\. Installing *InfoSelect* 
 
 You can install the package from
-[GitHub](https://github.com/felipemaiapolo/infosel).
+[PyPI](https://pypi.org/project/infoselect/)
 
 ``` :sh
 $ pip install infoselect
+```
+
+Also, you can install the package from
+[GitHub](https://github.com/felipemaiapolo/infosel).
+
+``` :sh
+$ pip install git+https://github.com/felipemaiapolo/infoselect.git#egg=infoselect
 ```
 
 --------------------
@@ -485,7 +495,7 @@ select.plot_mi()
 ```
 
 
-![png](README_files/output_33_0.png)
+![png](README_files/https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_33_0.png)
 
 
 Plotting the percentual variations of the mutual information between rounds:
@@ -496,7 +506,7 @@ select.plot_delta()
 ```
 
 
-![png](README_files/output_35_0.png)
+![png](README_files/https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_35_0.png.png)
 
 
 Making the selection choosing to stop at Round 5:
