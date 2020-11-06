@@ -42,7 +42,7 @@ You can install the package from
 [GitHub](https://github.com/felipemaiapolo/infosel).
 
 ``` :sh
-$ pip install git+https://github.com/felipemaiapolo/infoselect.git#egg=infoselect
+$ pip install infoselect
 ```
 
 --------------------

@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+infoselect/__init__.py
+infoselect/gmm.py
+infoselect/mi.py
+infoselect.egg-info/PKG-INFO
+infoselect.egg-info/SOURCES.txt
+infoselect.egg-info/dependency_links.txt
+infoselect.egg-info/requires.txt
+infoselect.egg-info/top_level.txt

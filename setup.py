@@ -12,7 +12,7 @@ setuptools.setup(
     description="Mutual Information Based Feature Selection in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url='https://github.com/felipemaiapolo/infoselect',
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
