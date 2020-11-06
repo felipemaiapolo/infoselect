@@ -495,7 +495,7 @@ select.plot_mi()
 ```
 
 
-![png](README_files/https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_33_0.png)
+![png](https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_33_0.png)
 
 
 Plotting the percentual variations of the mutual information between rounds:
@@ -506,7 +506,7 @@ select.plot_delta()
 ```
 
 
-![png](README_files/https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_35_0.png.png)
+![png](https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_35_0.png.png)
 
 
 Making the selection choosing to stop at Round 5:
