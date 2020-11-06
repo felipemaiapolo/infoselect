@@ -282,7 +282,7 @@ Since there is a 'break' in Round 2, we should choose to stop the algorithm at t
 select.plot_mi()
 ```
 
-<img src="https://ibb.co/qxVPZ1t">
+<img src="https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_17_0.png">
 
 
 Plotting the percentual variations of the mutual information between rounds:
@@ -293,7 +293,7 @@ select.plot_delta()
 ```
 
 
-![png](README_files/output_19_0.png)
+![png](https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_19_0.png)
 
 
 Making the selection choosing to stop at Round 2:
