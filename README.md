@@ -283,7 +283,9 @@ select.plot_mi()
 ```
 
 
-![png](README_files/output_17_0.png)
+
+
+![png](https://ibb.co/qxVPZ1t)
 
 
 Plotting the percentual variations of the mutual information between rounds:
