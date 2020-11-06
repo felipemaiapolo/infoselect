@@ -505,8 +505,7 @@ Plotting the percentual variations of the mutual information between rounds:
 select.plot_delta()
 ```
 
-
-![png](https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_35_0.png.png)
+![png](https://raw.githubusercontent.com/felipemaiapolo/imgs_infoselect/main/output_35_0.png)
 
 
 Making the selection choosing to stop at Round 5:
