@@ -8,8 +8,6 @@
 
 [![PyPI](https://img.shields.io/pypi/v/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
 [![PyPI](https://img.shields.io/pypi/dm/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
-[![PyPI](https://img.shields.io/pypi/dt/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
-[![PyPI](https://img.shields.io/pypi/d/infoselect.svg)](https://pypi.python.org/pypi/infoselect)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/infoselect/blob/master/InfoSelect.ipynb)
 
 In case you have any question or suggestion, please get in touch sending us an e-mail in *felipemaiapolo@gmail.com*.
