@@ -27,7 +27,12 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 In this package we implement the ideas proposed by [1, 2] in order to make variable/feature selection prior to regression and classification tasks using Gaussian Mixture Models (GMMs) to estimate the Mutual Information between labels and features. This is an efficient and well-performing alternative and was used in a recent work [3] by one of us.
 
-If you use our package in your research, you can cite it as follows:
+If you use our package in your research, you can cite our work as follows:
+
+    @article{poloeffective,
+      title={Effective Sample Size, Dimensionality, and Generalization in Covariate Shift Adaptation},
+      author={Polo, Felipe Maia and Vicente, Renato}
+    }
 
     @misc{polo2020infoselect,
       title={InfoSelect - Mutual Information Based Feature Selection in Python},
