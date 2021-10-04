@@ -38,13 +38,6 @@ If you use our package in your research, you can cite our work as follows:
       year={2021}
     }
 
-    @misc{polo2020infoselect,
-      title={InfoSelect - Mutual Information Based Feature Selection in Python},
-      author={Polo, Felipe Maia and Da Silva, Felipe Leno},
-      journal={GitHub: github.com/felipemaiapolo/infoselect},
-      year={2020}
-    }
-
 
 --------------
 
