@@ -29,9 +29,13 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
 
 If you use our package in your research, you can cite our work as follows:
 
-    @article{poloeffective,
+    @article{polo2021effective,
       title={Effective Sample Size, Dimensionality, and Generalization in Covariate Shift Adaptation},
-      author={Polo, Felipe Maia and Vicente, Renato}
+      author={Polo, Felipe Maia and Vicente, Renato},
+      journal={stat},
+      volume={1050},
+      pages={10},
+      year={2021}
     }
 
     @misc{polo2020infoselect,
