@@ -37,6 +37,14 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
     }
     
     
+    @misc{polo2020infoselect,
+      title={InfoSelect - Mutual Information Based Feature Selection in Python},
+      author={Polo, Felipe Maia and Da Silva, Felipe Leno},
+      journal={GitHub: github.com/felipemaiapolo/infoselect},
+      year={2020}
+    }
+    
+    
 
 
 --------------
