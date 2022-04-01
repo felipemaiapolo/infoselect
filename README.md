@@ -29,14 +29,16 @@ In this package we implement the ideas proposed by [1, 2] in order to make varia
 
 If you use our package in your research, you can cite our work as follows:
 
-    @article{polo2021effective,
-      title={Effective Sample Size, Dimensionality, and Generalization in Covariate Shift Adaptation},
-      author={Polo, Felipe Maia and Vicente, Renato},
-      journal={stat},
-      volume={1050},
-      pages={10},
-      year={2021}
+    @article{maia2022effective,
+      title={Effective sample size, dimensionality, and generalization in covariate shift adaptation},
+      author={Maia Polo, Felipe and Vicente, Renato},
+      journal={Neural Computing and Applications},
+      pages={1--13},
+      year={2022},
+      publisher={Springer}
     }
+    
+    
 
 
 --------------
