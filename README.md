@@ -25,9 +25,7 @@ In case you have any question or suggestion, please get in touch sending us an e
 <a name="1"></a>
 ## 1\. Introduction 
 
-In this package we implement the ideas proposed by [1, 2] in order to make variable/feature selection prior to regression and classification tasks using Gaussian Mixture Models (GMMs) to estimate the Mutual Information between labels and features. This is an efficient and well-performing alternative and was used in a recent work [3] by one of us.
-
-If you use our package in your research, you can cite our work as follows:
+In this package we implement the ideas proposed by [1, 2] in order to make variable/feature selection prior to regression and classification tasks using Gaussian Mixture Models (GMMs) to estimate the Mutual Information between labels and features. This is an efficient and well-performing alternative and was used in a recent work [3] by one of us:
 
     @article{maia2022effective,
       title={Effective sample size, dimensionality, and generalization in covariate shift adaptation},
@@ -536,6 +534,4 @@ X_new.shape
 
 [2] Lan, T., Erdogmus, D., Ozertem, U., & Huang, Y. (2006, July). Estimating mutual information using gaussian mixture model for feature ranking and selection. In The 2006 IEEE International Joint Conference on Neural Network Proceedings (pp. 5034-5039). IEEE.
 
-[3] Polo, F. M., & Vicente, R. (2020). Covariate Shift Adaptation in High-Dimensional and Divergent Distributions. arXiv preprint arXiv:2010.01184.
-
-
+[3] Maia Polo, F., & Vicente, R. (2022). Effective sample size, dimensionality, and generalization in covariate shift adaptation. Neural Computing and Applications, 1-13.
