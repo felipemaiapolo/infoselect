@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="infoselect",
-    version="1.0.0",
+    version="1.0.1",
     author="Felipe Maia Polo & Felipe Leno da Silva",
     author_email="felipemaiapolo@gmail.com, f.leno@usp.br",
     description="Mutual Information Based Feature Selection in Python.",

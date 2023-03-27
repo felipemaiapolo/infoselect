@@ -105,7 +105,7 @@ This class is used to order features/variables according to their importance and
 <a name="3.2"></a>
 ### 3.2\. Auxiliary Function `get_gmm`
 
-1. `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20], val_size=0.33, reg_covar=1e-06, random_state=42)`: 
+1. `get_gmm(X, y, y_cat=False, num_comps=[2,5,10,15,20,30,40,50], val_size=0.33, reg_covar=1e-06, covariance_type="full", random_state=42)`: 
 
     - Firstly, this function validate the number of GMM components, for each model it will train, in a holdout set using the mean log likelihood of samples in that set. If Y is non-categorical, it returns a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) model (in this order). On the other hand, if Y is categorical it returns a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`.
 
@@ -115,6 +115,7 @@ This class is used to order features/variables according to their importance and
         - **num_comps**: numbers of GMM components to be validated;
         - **val_size**: size of holdout set used to validate the GMMs numbers of components;
         - **reg_covar**: non-negative regularization added to the diagonal of covariance. Ensures the covariance matrices are non-singular.
+        - **covariance_type**: one of the following options:'full','tied','diag','spherical'. See [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html)
         - **random_state**: seed.
 
 --------------------
