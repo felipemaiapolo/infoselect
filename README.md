@@ -115,7 +115,7 @@ This class is used to order features/variables according to their importance and
         - **num_comps**: numbers of GMM components to be validated;
         - **val_size**: size of holdout set used to validate the GMMs numbers of components;
         - **reg_covar**: non-negative regularization added to the diagonal of covariance. Ensures the covariance matrices are non-singular.
-        - **covariance_type**: one of the following options:'full','tied','diag','spherical'. See [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html)
+        - **covariance_type**: one of the following options:'full','tied','diag','spherical'. See [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html). Thanks to Pritha Gupta for her suggestion on this point.
         - **random_state**: seed.
 
 --------------------
