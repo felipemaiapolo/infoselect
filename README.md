@@ -77,8 +77,8 @@ This class is used to order features/variables according to their importance and
 
 1. `__init__(self, gmm, selection_mode = 'forward')`
     - **gmm**: 
-        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) - y should always be in the first column;
-        - If <img src="https://render.githubusercontent.com/render/math?math=Y"> is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
+        - If $Y$ is *non*-categorical: a [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in (y,X) - y should always be in the first column;
+        - If $Y$ is categorical: a Python dictionary containing one [Scikit-Learn GMM](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html) fitted in X conditional on each category - something like X[y==c,:]. Format `{0:gmm0, 1:gmm1, ..., C:gmmC}`;
         - Please use auxiliary function `get_gmm` below, especially if you want to use `covariance_type` other than 'full'.
     - **selection_mode**: `forward`/`backward` algorithms.
         - `forward` selection: we start with an empty set of features and then select the feature that has the largest estimated mutual information with the target variable and. At each subsequent step, we select the feature that marginally maximizes the estimated mutual information of the target and all the chosen features so far. We stop when we have selected/ordered all the features;
@@ -88,7 +88,7 @@ This class is used to order features/variables according to their importance and
     - **X**: numpy array of features; 
     - **y**: numpy array of labels;
     - **verbose**: print or not to print!?
-    - **eps**: small value so we can avoid taking log of zero in some cases .
+    - **eps**: small value so we can avoid taking log of zero in some cases.
 
 3. `get_info(self)`: 
     - This function creates and outputs a Pandas DataFrame with the history of feature selection/elimination. The `mi_mean` column gives the estimated Mutual Information while `mi_error` gives the standard error of that estimate. On the other hand, the `delta` column gives us the percentual information loss/gain in that round, relatively to the latter;
@@ -136,18 +136,13 @@ import matplotlib.pyplot as plt
 <a name="4.1"></a>
 ### 4.1\. Dataset
 
-We generate a dataset <img src="https://render.githubusercontent.com/render/math?math=D"> sampled from <img src="https://render.githubusercontent.com/render/math?math=\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}"> similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which <img src="https://render.githubusercontent.com/render/math?math=Y_i"> is given by
+We generate a dataset $\mathcal{D}$ sampled from $\mathcal{D}=\{(X_{0,i},...,X_{6,i},Y_i)\}_{i=1}^{n}$ similar to the one in [here](https://www.cs.toronto.edu/~delve/data/add10/desc.html), in which $Y_i$ is given by
 
-<br>
-<img src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Balign*%7D%0AY_i%20%26%3D%20f(X_%7B0%2Ci%7D%2C...%2CX_%7B6%2Ci%7D)%20%2B%20%5Cepsilon_i%5C%5C%0A%20%20%20%20%26%3D10%5Ccdot%20%5Csin(%5Cpi%20X_%7B0%2Ci%7D%20%20X_%7B1%2Ci%7D)%20%2B%2020%20(X_%7B2%2Ci%7D-0.5)%5E2%20%2B%2010%20X_%7B3%2Ci%7D%20%2B%205%20X_%7B4%2Ci%7D%20%2B%20%5Cepsilon_i%0A%5Cend%7Balign*%7D">
-<br>
+$$
+Y_i = 10 \sin(\pi X_{0,i} X_{1,i}) + 20 (X_{2,i} - 0.5)^2 + 10 X_{3,i} + 5 X_{4,i} + \varepsilon_i
+$$
 
-Where <img src="https://render.githubusercontent.com/render/math?math=X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]"> and <img src="https://render.githubusercontent.com/render/math?math=\epsilon_i \sim N(0,1)"> independent from all the other random variables for all <img src="https://render.githubusercontent.com/render/math?math=i\in [n]">. See that our target variable does not depende on the last two features. In the following we set `n=10000`:
-
-
-```python
-def f(X,e): return 10*np.sin(np.pi*X[:,0]*X[:,1]) + 20*(X[:,2]-.5)**2 + 10*X[:,3] + 5*X[:,4] + e
-```
+Where $X_{0,i},...,X_{6,i} \overset{iid}{\sim} U[0,1]$ and $\varepsilon_i \sim N(0,1)$ independent from all the other random variables for all $i\in [n]$. See that our target variable does not depend on the last two features. In the following, we set `n=10000`:
 
 
 ```python
