@@ -330,7 +330,7 @@ X_new.shape
 <a name="4.3"></a>
 ### 4.3\. Selecting Features for a Classification Task
 
-Categorizing <img src="https://render.githubusercontent.com/render/math?math=Y">:
+Categorizing Y:
 
 
 ```python
